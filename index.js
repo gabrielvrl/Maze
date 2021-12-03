@@ -38,7 +38,21 @@ const startRow = Math.floor(Math.random() * cells);
 const startColumn = Math.floor(Math.random() * cells);
 
 const stepThroughCell = (row, column) => {
-  
+  if(grid[row][column]) {
+    return;
+  }
+
+  grid[row][column] = true;
+
+  const neighbors = [
+    [row - 1, column],
+    [row, column + 1],
+    [row + 1, column],
+    [row, column - 1]
+  ];
+
+
 }
 
-stepThroughCell(startRow, startColumn)
+stepThroughCell(startRow, startColumn);
+console.log(grid)
